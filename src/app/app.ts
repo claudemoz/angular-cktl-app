@@ -1,15 +1,18 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Footer } from './components/footer';
-import { Header } from './components/header';
-import { Cocktails } from './components/cocktails/cocktails';
+import { Header } from './components/header/header';
+import { Cocktails } from './views/cocktails/cocktails';
+import { seedData } from './shared/data/seed';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Footer, Cocktails],
+  imports: [Header, Footer, RouterOutlet],
   template: `
     <app-header />
-    <app-cocktails class="flex-auto" />
+    <div class="flex-auto flex flex-col">
+      <router-outlet/>
+    </div>
     <app-footer />
   `,
   styles: `
@@ -23,4 +26,8 @@ import { Cocktails } from './components/cocktails/cocktails';
 
 export class App {
   protected readonly title = signal('cocktails');
+
+  // constructor(){
+  //   seedData()
+  // }
 }
