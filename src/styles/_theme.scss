@@ -57,3 +57,16 @@ input {
   border-radius: var(--radius);
   color: white;
 }
+.btn-danger {
+  background-color: var(--danger);
+  color: white;
+}
+.error {
+  color: var(--danger);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.disabled {
+  opacity: 0.5;
+}
